@@ -2,6 +2,16 @@ import pandas as pd
 import numpy as np
 
 class DataImport():
+
+    def filter_columns(df):
+        df = df.loc[:["pl_bmasse","hostname","st_teff","sy_snum","st_metratio"
+                        ,"st_spectype","st_mass","st_teff","st_logg"]]
+        df = df[df["sy_snum"]  == 1]
+        return df
+
+    def get_count(df):
+        return df.groupby("hostname").size()
+
     def read_in_data():
         """
         Imports and does high level filtering of the dataset
