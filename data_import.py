@@ -9,11 +9,20 @@ class DataImport():
         df = df[df["sy_snum"] == 1]
         return df.dropna()
 
-    def get_count_spectrum(df):
-        return df.groupby(["pl_bmasse","hostname","st_teff","st_metratio"
-                            ,"st_spectype","st_mass","st_logg","sy_pnum"])
-                            
+    def dedupe(df):
+        return df.drop_duplicates()
+    
+    def avrg_num_spectrum(df):
+        return df.groupby("st_metratio")["sy_pnum"].mean()
+    
+    def avrg_num_spectrum(df):
+        return df.groupby("st_metratio")["sy_pnum"].mean()
 
+    def avrg_num_spectrum(df):
+        return df.groupby("st_metratio")["sy_pnum"].mean()
+
+    def avrg_num_spectrum(df):
+        return df.groupby("st_metratio")["sy_pnum"].mean()
 
     def read_in_data():
         """

@@ -4,4 +4,6 @@ import seaborn as sb
 
 class DataGraph():
     def plot_counts_spectrutm(df):
-        sb.catplot(x="")
+        plot = sb.catplot(x="st_metratio", y="sy_pnum", data=df) 
+        plot.figure.savefig("output.png")
+        print(plot)
