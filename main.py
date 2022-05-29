@@ -13,5 +13,7 @@ if __name__ == "__main__":
  #   print(df)
   #  df.to_csv("full2.csv")
     df = di.DataImport.dedupe(df)
+    dg.DataGraph.plot_counts_mass(df)
+    dg.DataGraph.plot_counts_rad(df)
     df = di.DataImport.avrg_num_metalicity(df)
     dg.DataGraph.plot_counts_spectrutm(df)
