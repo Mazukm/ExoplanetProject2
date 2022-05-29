@@ -12,4 +12,5 @@ if __name__ == "__main__":
     print(df)
     df.to_csv("full2.csv")
     df = di.DataImport.get_count_spectrum(df)
+    print(df)
     df.to_csv("full3.csv")

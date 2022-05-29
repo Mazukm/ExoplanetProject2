@@ -5,13 +5,13 @@ class DataImport():
 
     def filter_columns(df):
         df = df.loc[:,["pl_bmasse","hostname","st_teff","sy_snum","st_metratio"
-                        ,"st_spectype","st_mass","st_teff","st_logg"]]
-        df = df[df["sy_snum"]  == 1]
+                        ,"st_spectype","st_mass","st_logg","sy_pnum"]]
+        df = df[df["sy_snum"] == 1]
         return df.dropna()
 
     def get_count_spectrum(df):
-        return df.groupby(["pl_bmasse","hostname","st_teff","sy_snum","st_metratio"
-                            ,"st_spectype","st_mass","st_teff","st_logg"]).size()
+        return df.groupby(["pl_bmasse","hostname","st_teff","st_metratio"
+                            ,"st_spectype","st_mass","st_logg","sy_pnum"])
                             
 
 
