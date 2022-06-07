@@ -26,7 +26,7 @@ class DataImport():
         """
         creates a dataset of the mean of planets per spectrum type
         """
-        return df.groupby("st_specty", as_index=False)["sy_pnum"].mean()
+        return df.groupby("st_spectype", as_index=False)["sy_pnum"].mean()
 
 
     def read_in_data():

@@ -4,7 +4,7 @@ import seaborn as sbn
 import matplotlib.pyplot as plt 
 
 class DataGraph():
-    def plot_counts_spectrum(df):
+    def plot_counts_metalicity(df):
         """
         makes a boxplot of the metal ratios
         to the amount of planets
@@ -13,7 +13,21 @@ class DataGraph():
         plt.xlabel("Metalicity ratio of the star")
         plt.ylabel("number of planets")
         plt.title("Metalicity of the star to the number of planets")
-        plt.savefig("./graphdata/metalicit_av_count.png")
+        plt.savefig("./graphdata/metalicit_av_count.png", bbox_inches="tight")
+        plt.tight_layout()
+        plt.clf()
+
+    def plot_counts_spectrum(df):
+        """
+        makes a boxplot of the spectrum
+        to the avrage amount of planets
+        """
+        sbn.catplot(x="st_spectype", kind='bar', y="sy_pnum", data=df) 
+        plt.xlabel("Spectrum of the star")
+        plt.ylabel("number of planets")
+        plt.title("Spectrum of the star to the number of planets")
+        plt.savefig("./graphdata/spectrum_av_count.png", bbox_inches="tight")
+        plt.tight_layout()
         plt.clf()
 
     def plot_counts_mass(df):
