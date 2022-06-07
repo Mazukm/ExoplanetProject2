@@ -43,4 +43,4 @@ class MachineLearning():
         and comparing to the output
         """
         test_predictions = model.predict(features_test)
-        print('Test  Diviation:', mean_squared_error(np.array(labels_test).reshape(-1, 1), test_predictions))
+        print('Test  Deviation:', mean_squared_error(np.array(labels_test).reshape(-1, 1), test_predictions))
